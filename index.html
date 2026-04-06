@@ -14,7 +14,8 @@
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Undangan Pernikahan Malinda & Fahmi"/>
   <meta property="og:description" content="Minggu, 12 Desember 2026 · Grand Ballroom Hotel Mulia, Jakarta"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1490750967868-88df5691b97d?w=1200&q=85"/>
+  <!-- Mengubah OG Image ke gambar lokal (Pastikan link ini nanti diganti dengan URL aslimu jika sudah live) -->
+  <meta property="og:image" content="media/cover.jpeg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:locale" content="id_ID"/>
@@ -23,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Undangan Pernikahan Malinda & Fahmi"/>
   <meta name="twitter:description" content="Minggu, 12 Desember 2026 · Grand Ballroom Hotel Mulia"/>
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1490750967868-88df5691b97d?w=1200&q=85"/>
+  <meta name="twitter:image" content="media/cover.jpeg"/>
 
   <!-- ── Favicon (inline SVG) ── -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 28C16 28 4 20 4 11C4 7 7 4 11 4C13.2 4 15.1 5 16 6.6C16.9 5 18.8 4 21 4C25 4 28 7 28 11C28 20 16 28 16 28Z' fill='%23c5a059'/></svg>"/>
@@ -36,8 +37,8 @@
   <!-- ── Fonts ── -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-  <!-- ── Preload hero cover image ── -->
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1490750967868-88df5691b97d?auto=format&fit=crop&w=1600&q=85" fetchpriority="high"/>
+  <!-- ── Preload hero cover image (DIUBAH KE FILE LOKAL) ── -->
+  <link rel="preload" as="image" href="media/cover.jpeg" fetchpriority="high"/>
 
   <!-- ── Tailwind ── -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -151,7 +152,8 @@ a { text-decoration:none; }
 
 .gate-photo {
   position:absolute; inset:0;
-  background:url('https://images.unsplash.com/photo-1490750967868-88df5691b97d?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;
+  /* MENGUBAH BACKGROUND MENJADI FILE LOKAL */
+  background:url('media/cover.jpg') center/cover no-repeat;
   filter:brightness(0.88) saturate(1.15);
   transition:filter 1s ease;
 }
@@ -376,12 +378,12 @@ a { text-decoration:none; }
 ═══════════════════════════════════════════ */
 .dual-arch-wrap {
   display:flex; align-items:flex-end; justify-content:center;
-  gap:0; margin:44px auto 16px; width:min(480px,90vw); position:relative;
+  gap:0; margin:44px auto 16px; width:min(540px,95vw); position:relative;
 }
 .dual-arch-center {
   display:flex; flex-direction:column; align-items:center;
   justify-content:flex-end; padding-bottom:40px; gap:10px;
-  flex-shrink:0; z-index:10; position:relative;
+  flex-shrink:0; z-index:10; position:relative; margin:0 8px;
 }
 .dual-arch-center::before {
   content:''; display:block; width:1px; height:60px;
@@ -394,33 +396,21 @@ a { text-decoration:none; }
 .arch-card {
   display:flex; flex-direction:column; align-items:center; gap:14px; flex:1;
 }
-.arch-card:first-child { padding-right:14px; }
-.arch-card:last-child  { padding-left:14px;  }
+.arch-card:first-child { padding-right:0; }
+.arch-card:last-child  { padding-left:0;  }
 .arch-card:first-child .arch-wrap { margin-bottom:52px; }
 
 .arch-wrap { position:relative; width:100%; }
-.arch-wrap::before {
-  content:''; position:absolute; inset:-8px;
-  border-radius:120px 120px 6px 6px;
-  border:1px solid rgba(197,160,89,0.3); z-index:0;
-}
-.arch-wrap::after {
-  content:''; position:absolute; inset:-16px;
-  border-radius:128px 128px 6px 6px;
-  border:1px solid rgba(197,160,89,0.12); z-index:0;
-}
+
 .arch-inner {
   position:relative; z-index:1;
-  border-radius:110px 110px 4px 4px; overflow:hidden; aspect-ratio:3/4;
-  box-shadow:0 20px 52px rgba(74,64,58,0.18), 0 4px 12px rgba(197,160,89,0.15);
-  border:1.5px solid var(--gold);
+  border-radius:140px 140px 6px 6px; overflow:hidden; aspect-ratio:3/4;
 }
 .arch-inner img {
   width:100%; height:100%; object-fit:cover;
-  filter:sepia(0.08) saturate(1.12) brightness(1.02);
-  transition:transform 0.6s ease, filter 0.4s ease;
+  transition:transform 0.6s ease;
 }
-.arch-wrap:hover .arch-inner img { transform:scale(1.04); filter:sepia(0.03) saturate(1.22); }
+.arch-wrap:hover .arch-inner img { transform:scale(1.04); }
 
 .arch-name {
   font-family:'Great Vibes',cursive;
@@ -445,6 +435,7 @@ a { text-decoration:none; }
 }
 .quote-fullbleed-bg {
   position:absolute; inset:0;
+  /* (OPSIONAL) Jika kamu juga mendownload gambar untuk background Quote, ganti URL di bawah ini */
   background:url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=75') center/cover no-repeat;
   filter:brightness(0.55) saturate(0.8);
   transform:scale(1.04);
@@ -788,7 +779,7 @@ a { text-decoration:none; }
      AUDIO
 ════════════════════════════════════════ -->
 <audio id="bg-music" loop preload="none">
-  <source src="https://https://cdn.pixabay.com/audio/2025/12/05/audio_c554dd6080.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2025/12/05/audio_c554dd6080.mp3" type="audio/mpeg">
 </audio>
 
 <!-- ════════════════════════════════════════
@@ -894,7 +885,7 @@ a { text-decoration:none; }
       <div class="arch-card">
         <div class="arch-wrap">
           <div class="arch-inner">
-            <img src="media/fotomalinda.jpeg"
+            <img src="media/fotomalinda.png"
                  alt="Malinda, mempelai wanita" loading="eager" width="400" height="533"/>
           </div>
         </div>
@@ -913,7 +904,7 @@ a { text-decoration:none; }
       <div class="arch-card">
         <div class="arch-wrap">
           <div class="arch-inner">
-            <img src="media/fotofahmi.jpeg"
+            <img src="media/fotofahmi.png"
                  alt="Fahmi, mempelai pria" loading="eager" width="400" height="533"/>
           </div>
         </div>
